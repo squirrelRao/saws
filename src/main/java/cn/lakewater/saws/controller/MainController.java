@@ -1,9 +1,8 @@
 package cn.lakewater.saws.controller;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import cn.lakewater.saws.model.Multip;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -48,4 +47,20 @@ public class MainController {
 
         return res;
     }
+
+    @PostMapping(value = "/mul")
+    public Map<String,Object> mul(@RequestBody String params){
+
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+
+        Multip multip = gson.fromJson(params,Multip.class);
+        Map<String,Object> res = new HashMap<>();
+
+        res.put("a",multip.getA());
+        res.put("b",multip.getB());
+        res.put("a * b",multip.getResult());
+        return res;
+    }
+
 }
