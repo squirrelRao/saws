@@ -2,6 +2,7 @@ package cn.lakewater.saws.controller;
 import cn.lakewater.saws.model.Multip;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.SimpleDateFormat;
@@ -9,11 +10,13 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @RestController
 public class MainController {
 
     @GetMapping(value = {"/hello",""})
     public String hello(){
+        log.debug("hello");
         return "hello saws";
     }
 
