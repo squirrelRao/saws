@@ -1,5 +1,7 @@
 package cn.lakewater.saws.model;
 
+import org.springframework.context.annotation.Bean;
+
 public class Multip {
 
     private Number a;
