@@ -20,12 +20,11 @@ public class WebsocketService {
      * @return
      * @throws IOException
      */
-    public void sendMsg(WebsocketService session, String text) throws IOException {
+    public void sendMsg(WebSocketSession session, String text) throws IOException {
         session.sendMessage(new TextMessage(text));
     }
 
-    private void sendMessage(TextMessage textMessage) {
-    }
+
 
     /**
      * 广播消息

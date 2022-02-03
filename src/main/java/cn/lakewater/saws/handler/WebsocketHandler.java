@@ -27,6 +27,7 @@ public class WebsocketHandler extends AbstractWebSocketHandler {
         // 获得客户端传来的消息
         String payload = message.getPayload();
         log.info("服务端接收到消息 " + payload);
+        session.sendMessage(new TextMessage("i got"));
     }
 
     @Override
